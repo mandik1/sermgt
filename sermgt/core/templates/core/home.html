@@ -1,0 +1,24 @@
+
+<table>
+<tr>
+        <th>Service name</th>
+        <th>Description </th>
+        <th>Price</th>
+        <th>BUY</th>
+
+</tr>
+{% for hgh in prods %}
+<tr>
+        <th>{{hgh.title}}</th>
+        <th>{{hgh.description}}</th>
+        <th>{{hgh.price}}</th>
+        <th><a href="{% url 'create_apt' %}?query = {{ hgh.title|urlencode }}">BUY</a></th>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+<a href="{% url 'addservice' %}">Add Service</a>
